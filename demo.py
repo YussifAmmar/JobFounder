@@ -53,10 +53,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-def send_telegram(bot_token, chat_id, message):
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    requests.post(url, data={"chat_id": chat_id, "text": message})
-
 def scrape_jobs(DesiredJob = "Mahchine Learning" ,location= "Egypt", cookies_file="cookies.json", csv_filename="Jobs.csv"):
     
     DesiredJob = DesiredJob.split(" ")
