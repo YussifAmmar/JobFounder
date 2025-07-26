@@ -1,48 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.common.by import By
-# import requests
-
-
-# service = webdriver.ChromeService()
-# driver = webdriver.Chrome(service=service)
-# # url = "https://www.linkedin.com/feed/"
-# # search_id = "global-nav-typeahead"
-# # driver.get("url")
-
-# # input_element = driver.get_element(By.ID, search_id)
-# # input_element.send_keys("Remote ML jobs")
-
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# import time
-
-# driver = webdriver.Chrome()
-# driver.get("https://www.linkedin.com/jobs/search/?keywords=Machine%20Learning&location=Egypt")
-
-# time.sleep(10)
-
-# jobs = driver.find_elements(By.CLASS_NAME, "job-card-container__link")
-# job_details = driver.find_elements(By.ID, "job-details")
-
-
-
-# def send_telegram(bot_token, chat_id, message):
-#     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-#     requests.post(url, data={"chat_id": chat_id, "text": message})
-
-# bot_token = "8074126972:AAGcGuHJ_5tFX5ySXxQDriQlRY5NnQi3CC8"
-# chat_id = "8117586774"
-
-
-
-
-# for job in jobs:
-#     msg =f"New ML Job Found! {job.text}"
-#     send_telegram(bot_token,chat_id,msg)
-#     #print(job_details.text)
-
-
 import json
 import csv
 import time
@@ -106,7 +61,7 @@ def scrape_jobs(DesiredJob = "Mahchine Learning" ,location= "Egypt", cookies_fil
     print(f"Saved {len(job_list)} jobs to {csv_filename}")
 
     if job_list:
-        message = "New ML Jobs in Egypt:\n\n" + "\n\n".join(
+        #message = "New ML Jobs in Egypt:\n\n" + "\n\n".join(
             [f"{title}\n{link}" for title, link, _ in job_list]
         )
     else:
