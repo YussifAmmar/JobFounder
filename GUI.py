@@ -16,7 +16,7 @@ def toggle_mode():
         ctk.set_appearance_mode("light")
 
 app = ctk.CTk()
-app.title("Linkedin ML Jobs")
+app.title("Linkedin JobFounder")
 
 warning = ctk.CTkLabel(
     app,
